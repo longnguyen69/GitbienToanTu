@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tinh Điểm Trung Bình</title>
+    <script>
+        function TinhDiem() {
+            let vatly = +document.getElementById("VatLy").value;
+            let sinhhoc = +document.getElementById("SinhHoc").value;
+            let hoahoc = +document.getElementById("HoaHoc").value;
+            if (vatly=="" || sinhhoc == "" || hoahoc=="") {
+                alert('Bạn chưa nhập đủ thông tin')
+            }else {
+                let tongdiem=(vatly+hoahoc+sinhhoc);
+                let daemon = (vatly + hoahoc + sinhhoc) / 3;
+                document.getElementById("Diemtb").value = daemon;
+                document.getElementById("Tongdiem").value = tongdiem;
+            }
+        }
+    </script>
+</head>
+<body style="width: 30%; margin: 0 auto;">
+    <table>
+        <tr>
+            <td>Điểm Vật Lý</td>
+            <td><input type="text" id="VatLy" name="NhapVl"></td>
+        </tr>
+        <tr>
+            <td>Điểm Sinh Học</td>
+            <td><input type="text" id="SinhHoc" name="NhapSh"></td>
+        </tr>
+        <tr>
+            <td>Điểm Hóa Học</td>
+            <td><input type="text" id="HoaHoc" name="NhapHh"></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td><input type="button" id="TinhTb" name="btnDiemtb" value="Tính Điểm" onclick="TinhDiem()"></td>
+        </tr>
+        <tr>
+            <td>Điểm Trung Bình</td>
+            <td><input type="text" id="Diemtb" name="ShowDiem"></td>
+        </tr>
+        <tr>
+            <td>Tổng Điểm</td>
+            <td><input type="text" id="Tongdiem"></td>
+        </tr>
+    </table>
+</body>
+</html>

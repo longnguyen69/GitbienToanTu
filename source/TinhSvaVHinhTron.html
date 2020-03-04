@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tính S và V Hình Tròn</title>
+    <script>
+        function TinhSvaV() {
+            let rht = +document.getElementById("input").value;
+            let option = document.getElementById('select').value;
+            let result = '';
+            switch (option) {
+                case '2':{
+                     result = 2 * Math.PI * rht;
+                    break;
+                }
+                case '1':{
+                     result = Math.PI * rht * rht;
+                    break;
+                }
+            }
+            document.getElementById("result").value = result;
+
+        }
+    </script>
+</head>
+<body>
+    <table>
+        <tr>
+            <td>Nhập bán kính</td>
+            <td><input type="text" id="input"></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td><select id="select">
+                <option value="1">Diện Tích</option>
+                <option value="2">Chu Vi</option>
+            </select></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td><input type="button" id="btnCD" value="Tính" onclick="TinhSvaV()"></td>
+        </tr>
+        <tr>
+            <td>Kết Quả</td>
+            <td><input type="text" id="result"></td>
+        </tr>
+    </table>
+</body>
+</html>
