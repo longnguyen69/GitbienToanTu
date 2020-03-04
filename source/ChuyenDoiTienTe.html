@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Chuyển Đổi Tiền Tệ</title>
+    <script>
+        function rateamount() {
+           let value2 =  document.getElementById("select2").value;
+           alert(value2);
+           let ratemn = ((+document.getElementById("input").value)*value2)/(document.getElementById("select1").value);
+           document.getElementById("result").value = ratemn;
+        }
+    </script>
+</head>
+<body>
+<table>
+    <tr>
+        <th>Amount</th>
+        <th>From Currency</th>
+        <th>To Currency</th>
+        <th></th>
+        <th></th>
+    </tr>
+    <tr>
+        <td><input type="text" id="input"></td>
+        <td><select id="select1">
+            <option selected value="23120">VietNam</option>
+            <option value="1">USD</option>
+        </select></td>
+        <td><select id="select2">
+            <option value="1" selected>USD</option>
+            <option value="23120">VietNam</option>
+        </select></td>
+        <td><input type="button" id="changemoney" onclick="rateamount()" value="Convert" ></td>
+        <td><input type="text" id="result"></td>
+    </tr>
+</table>
+</body>
+</html>
