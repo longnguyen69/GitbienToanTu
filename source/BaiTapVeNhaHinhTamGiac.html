@@ -13,56 +13,26 @@
             document.getElementById("bt2").style.display = "block";
             document.getElementById("bt1").style.display = "none";
         }
-        function iCheck() {
-            let a = +prompt("Nhập số a= "); //biến cục bộ
-            let b = Number(prompt("Nhập số b= "));
-            let c = +prompt("Nhập số c= ");
-            triangle(a,b,c);
-        }
-
-        function isTamGiac(x, y ,z) { //kiểm tra tính hợp lệ của tam giác
-            if ((x + y) > z && (x + z) > y && (y + z) > x) { // tham số x y z sẽ nhận giá trị truyền vào tương ứng a, b ,c
-                return true; // khi ta cho giá trị lúc gọi hàm funtion tại phần khác nhau của document
-            }
-            return  false;
-        }
-
-        function isTamgiacdeu(q, w, e) {
-           if (q == w && q == e ) {
-               return true;
-           }
-           return false;
-        }
-        function isTamGiacCan(t, u, v) {
-            if (t == u || t == v || u == v){
-                return true;
-            }
-            return false;
-        }
-        function isTamGiacVuong(m, n, o) {
-            if (Math.pow(m, 2) == Math.pow(n, 2) + Math.pow(o, 2) || Math.pow(n, 2) == Math.pow(m, 2) + Math.pow(o, 2)|| Math.pow(o, 2) == Math.pow(n, 2) + Math.pow(m, 2)){
-                return true;
-            }
-            return false;
-        }
-
-        function triangle(a,b,c) {
-            let str = "";
-            if(isTamGiac(a,b,c)){
-                if(isTamGiacCan(a,b,c)){
-                    str = "Đây là tam giác cân";
-                }else if(isTamgiacdeu(a,b,c)){
-                    str ="Đây là tam giác đều";
-                }else if(isTamGiacVuong(a,b,c)){
-                    str ="Đây là tam giác vuông";
-                }else {
-                    str = "Đây là tam giác thường";
-                }
-            }else{
-                str = "Đây không phải tam giác";
-            }
-            alert(str + " với ba cạnh là " +a+", "+b+", "+c);
-        }
+       function iCheck() {
+            let a = +prompt("Nhap a");
+            let b = +prompt("Nhap b");
+            let c = +prompt("nhap c");
+        if (a<=0||b<=0||c<=0){
+            alert("Ban nhap sai, canh tam giac phai lon hon 0");
+        }else if (a+b>c && a+c>b && b+c>a){
+            if (Math.pow(a, 2) == Math.pow(b, 2) + Math.pow(c, 2) || Math.pow(b, 2) == Math.pow(a, 2) + Math.pow(c, 2)|| Math.pow(c, 2) == Math.pow(a, 2) + Math.pow(b, 2)){
+                alert("ban nhap la tam giac vuong");
+            }else if (a == b||b==c|| a==c){
+                alert("ban nhap tam giac can");
+            }else if (a==b && a==c){
+                alert("ban da nhap tam giac deu");
+            } else alert("ban da nhap tam giac thuong");
+            let result1 = a + b + c;
+            alert("chu vi tam giac ban da nhap la: " + result1+ "voi ba canh la: " + a +", "+b+", "+c);
+            let result2 = (Math.sqrt((a + b + c) * (a + b - c) * (b + c - a) * (c + a - b))) / 4;
+            alert("dien tich tam giac ban da nhap la: " + result2 + "voi ba canh la: " + a +", "+b+", "+c);
+        } else alert("ban nhap khong phai tam giac");
+       }
     </script>
 </head>
 <body style="width: 30%; margin: 0 auto;">
