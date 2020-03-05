@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Máy Tính</title>
+
+</head>
+<body>
+    <table>
+
+        <tr>
+            <td colspan="2"><input type="text" id="input1"></td>
+            <td colspan="2"><input type="text" id="input2"></td>
+        </tr>
+        <tr>
+            <td colspan="4"><input type="text" id="result"></td>
+        </tr>
+        <tr>
+            <td><input type="button" value="+" onclick="count(this.value)"></td>
+            <td><input type="button" value="-" onclick="count(this.value)"></td>
+            <td><input type="button" value="x" onclick="count(this.value)"></td>
+            <td><input type="button" value="/" onclick="count(this.value)"></td>
+        </tr>
+    </table>
+    <script>
+        function count(operation) {
+            let a = document.getElementById("input1").value;
+            a=Number.parseFloat(a);
+            let b = document.getElementById("input2").value;
+            b=Number.parseFloat(b);
+            const SUM = '+';
+            const SUB = '-';
+            const DIVI = '*';
+            const MUL = '/';
+            let result = 0;
+            switch (operation) {
+                case ('+'):
+                    result = a + b;
+                    break;
+                case (SUB):
+                    result = a - b;
+                    break;
+                case ('*'):
+                    result = a * b;
+                    break;
+                case (MUL):
+                    result = a / b;
+                    break;
+            }
+            document.getElementById("result").value = result;
+        }
+    </script>
+</body>
+</html>

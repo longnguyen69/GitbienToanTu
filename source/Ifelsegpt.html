@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>giai phuong trinh</title>
+    <script>
+        function GiaiPt() {
+            let a,b;
+            a=prompt("nhap a");
+            a=Number.parseFloat(a);
+            b=prompt("nhap b");
+            b=Number.parseFloat(b);
+            if (a==0)
+                if (b==0) alert("phuong trinh vo so nghiem")
+                else alert("phuong trinh vo nghiem")
+            else alert("phuong trinh co nghiem x= " + (-b/a));
+
+        }
+    </script>
+    <script>
+        function Kiemtraso() {
+            let a = prompt("nhập số a = ")
+            a=Number.parseFloat(a);
+            if (a>9999) alert("Bạn nhập vào không hợp lệ")
+            if (a==0) alert("ban nhập số 0")
+            else if (a>0) alert("bạn đã nhập số dương")
+            else alert("bạn đã nhập số âm");
+            if (a<=9) alert("bạn nhập số có một chữ số")
+            else if (a<=99) alert("bạn nhập số có hai chữ số")
+            else if (a<=999) alert("bạn nhập số có ba chữ số")
+            else alert("bạn nhập số có bốn chữ số");
+        }
+    </script>
+</head>
+<body>
+<!-- <table>
+    <tr>
+        <td>Nhập số a</td>
+        <td><input type="text" id="a"></td>
+    </tr>
+    <tr>
+        <td>Nhập số b</td>
+        <td><input type="text" id="b"></td>
+    </tr>
+    <tr>
+        <td></td>
+        <td><input type="button" id="Giai Pt" onclick="GiaiPt()"></td>
+    </tr>
+</table> --!>
+<input type="button" id="Giai Pt" onclick="GiaiPt()" value="Giai Phuong trinh ax+b=0">
+<input type="button" onclick="Kiemtraso()" value="Kiểm tra số">
+</body>
+</html>

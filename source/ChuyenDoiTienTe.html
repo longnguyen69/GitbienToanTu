@@ -22,16 +22,26 @@
         <th></th>
     </tr>
     <tr>
-        <td><input type="text" id="input"></td>
+        <td><input type="text" id="input" oninput="rateamount()"></td>
         <td><select id="select1">
             <option selected value="23120">VietNam</option>
             <option value="1">USD</option>
+            <option value="15010">AUD</option>
+            <option value="17037">CAD</option>
+            <option value="23765">CHF</option>
+            <option value="3279">CNY</option>
+            <option value="3403">DKK</option>
         </select></td>
         <td><select id="select2">
             <option value="1" selected>USD</option>
             <option value="23120">VietNam</option>
+            <option value="15010">AUD</option>
+            <option value="17037">CAD</option>
+            <option value="23765">CHF</option>
+            <option value="3279">CNY</option>
+            <option value="3403">DKK</option>
         </select></td>
-        <td><input type="button" id="changemoney" onclick="rateamount()" value="Convert" ></td>
+<!--        <td><input type="button" id="changemoney" onclick="rateamount()" value="Convert" ></td>-->
         <td><input type="text" id="result"></td>
     </tr>
 </table>
