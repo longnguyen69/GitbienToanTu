@@ -7,11 +7,20 @@
         #bt2{
             display: none;
         }
+        #bt3{
+            display: none;
+        }
     </style>
     <script>
         function iBam2() {
             document.getElementById("bt2").style.display = "block";
             document.getElementById("bt1").style.display = "none";
+            document.getElementById("bt3").style.display = "block";
+        }
+        function iBack() {
+            document.getElementById("bt3").style.display = "none";
+            document.getElementById("bt1").style.display = "block";
+            document.getElementById("bt2").style.display = "none";
         }
        function iCheck() {
             let a = +prompt("Nhap a");
@@ -28,9 +37,9 @@
                 alert("ban da nhap tam giac deu");
             } else alert("ban da nhap tam giac thuong");
             let result1 = a + b + c;
-            alert("chu vi tam giac ban da nhap la: " + result1+ "voi ba canh la: " + a +", "+b+", "+c);
+            alert("chu vi tam giac ban da nhap la: " + result1+ " voi ba canh la: " + a +", "+b+", "+c);
             let result2 = (Math.sqrt((a + b + c) * (a + b - c) * (b + c - a) * (c + a - b))) / 4;
-            alert("dien tich tam giac ban da nhap la: " + result2 + "voi ba canh la: " + a +", "+b+", "+c);
+            alert("dien tich tam giac ban da nhap la: " + result2 + " voi ba canh la: " + a +", "+b+", "+c);
         } else alert("ban nhap khong phai tam giac");
                 let result3 = confirm("ban muon nhap lai không");
                 if (result3){
@@ -45,5 +54,6 @@
 <body style="width: 30%; margin: 0 auto;">
 <h4 id="bt1">Hãy bấm vào đây:<input type="button" onclick="iBam2()" value="Checked"></h4>
 <h4 id="bt2">Bấm vào em đi anh ơi: <img src="images/trang.jpg" width="150px" height="200" alt="Bấm vào đây" onclick="iCheck()"></h4>
+<input type="button" id="bt3" value="Back" onclick="iBack()">
 </body>
 </html>
