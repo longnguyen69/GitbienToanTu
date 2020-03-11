@@ -2,9 +2,98 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Nhap Ngay Tháng</title>
+    <script>
+        function tinhSoNgay() {
+            let thang = +prompt("nhap thang: ");
+            let nam = +prompt("nhap nam: ");
+            alert("tháng " + thang + "/" + nam + "có " + tinhNgay(thang, nam) + "ngay");
+        }
+
+            function tinhSoNgayGiuaCacThangTrong1Nam() {
+               let thangDau = +prompt("thang dau: ");
+               let thangCuoi = +prompt("thang cuoi: ");
+               let nam = +prompt("Nhap Nam:");
+               let i, sum = 0;
+               for (i = thangDau; i <= thangCuoi; i++)
+                   sum += tinhNgay(i, nam);
+               alert("tong so ngay la: " + sum);
+           }
+
+        function otherNam1(thangDau, nam) {
+            // let thangDau = +prompt("Thang dau: ");
+            // let nam1 = +prompt("tu nam: ");
+            let i, sum1 = 0;
+            for (i = thangDau; i <= 12; i++)
+                sum1 += tinhNgay(i, nam);
+            return sum1;
+        }
+
+        function otherNam2(thangCuoi, nam) {
+            // let thangCuoi = +prompt("Thang cuoi: ");
+            // let nam2 = +prompt("nam: ");
+            let j, sum2 = 0;
+            for (j = 1; j <= thangCuoi; j++)
+                sum2 += tinhNgay(j, nam);
+            return sum2;
+        }
+
+            function tinhSoNgayGiuaCacThangKhacNam() {
+              let thangDau = +prompt("Thang dau: ");
+              let nam1 = +prompt("tu nam: ");
+              let thangCuoi = +prompt("Thang cuoi: ");
+              let nam2 = +prompt("den nam: ");
+              let sum = 0;
+              sum = otherNam1(thangDau, nam1) + otherNam2(thangCuoi, nam2);
+              alert("so ngay trong cac thang la: " + sum);
+             }
+
+        function namChan() {
+            let thangDau = +prompt("Thang dau: ");
+            let nam1 = +prompt("tu nam: ");
+            let thangCuoi = +prompt("Thang cuoi: ");
+            let nam2 = +prompt("den nam: ");
+            let x, namchan = 0, sum = 0, sumN = 0;
+            for (namchan = nam1 + 1; namchan < nam2; namchan++)
+                for (x = 1; x <= 12; x++)
+                    sum += tinhNgay(x, namchan);
+            sumN = sum + otherNam1(thangDau, nam1) + otherNam2(thangCuoi, nam2);
+            alert("tong so ngay trong các năm là: " + sumN);
+        }
+
+        function tinhNgay(thang, nam) {
+            switch (thang) {
+                case 1:
+                case 3:
+                case 5:
+                case 7:
+                case 8:
+                case 10:
+                case 12:
+                    return 31;
+                case 4:
+                case 6:
+                case 9:
+                case 11:
+                    return 30;
+                case 2:
+                    if (kiemTraNhuan(nam))
+                        return 29;
+                    else return 28;
+                default:
+                    return "khong phai la thang hop le";
+            }
+        }
+
+        function kiemTraNhuan(nam) {
+            return (nam % 400 == 0) || (nam % 4 == 0 && nam % 100 != 0);
+        }
+    </script>
 </head>
 <body>
-
+<button onclick="tinhSoNgay()"> Nhập tháng</button>
+<button onclick="tinhSoNgayGiuaCacThangTrong1Nam()">tinh so ngay giua cac thang</button>
+<button onclick="tinhSoNgayGiuaCacThangKhacNam()">tinh so ngay giua cac thang khac nam</button>
+<button onclick="namChan()">Tinh Tong So Ngay</button>
 </body>
 </html>
